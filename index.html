@@ -22,7 +22,7 @@
       --g300: #ccc;
       --g200: #e5e5e5;
       --white: #ffffff;
-      --serif: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+      --serif: 'Noto Serif SC','Noto Serif TC','Source Han Serif SC',Georgia,'Times New Roman',serif;
       --sans: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
       --mono: 'IBM Plex Mono', 'Courier New', monospace;
     }
@@ -98,12 +98,28 @@
 
     .header-logo img { height: 44px; width: auto; }
 
-    .header-text {
+    .header-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .header-brand-en {
       font-family: var(--serif);
-      font-size: 17px;
-      font-weight: 500;
+      font-weight: 700;
+      font-size: 18px;
       letter-spacing: 0.5px;
-      color: rgba(255,255,255,0.9);
+      color: #fff;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .header-brand-cn {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.3;
+      white-space: nowrap;
     }
 
     .header-meta {
@@ -313,6 +329,23 @@
       .card { padding: 20px 18px; }
       .footer { padding: 16px 20px; flex-direction: column; gap: 6px; }
     }
+
+    @media (max-width: 375px) {
+      .header { padding: 14px 16px; }
+      .main { padding: 24px 16px; }
+      .hero-title { font-size: 24px; }
+      .hero-sub { font-size: 12px; }
+      .grid { max-width: 280px; }
+      .card { padding: 16px 14px; font-size: 13px; }
+      .footer { font-size: 10px; padding: 14px 16px; }
+    }
+
+    @media (max-width: 640px) {
+      .header-brand-text { align-items: center; }
+      .header-brand-en { font-size: 14px; }
+      .header-brand-cn { font-size: 9px; }
+      .header-logo img { height: 36px; }
+    }
   </style>
 </head>
 <body>
@@ -329,7 +362,10 @@
       <div class="header-logo">
         <img src="./images/sqRoUBvxwRc.png" alt="Total OPC">
       </div>
-      <span class="header-text">TOTAL OPC SDN. BHD.</span>
+      <div class="header-brand-text">
+        <span class="header-brand-en">TOTAL OPC SDN. BHD.</span>
+        <span class="header-brand-cn">全方位一人有限公司 · SSM: 202601023366 (1685463-A)</span>
+      </div>
     </div>
     <div class="header-meta">Region Select</div>
   </header>
@@ -353,24 +389,24 @@
         <span class="card-arrow">→</span>
       </a>
 
-      <a href="./uk.html" class="card">
+      <a href="./hk.html" class="card">
         <span class="card-num">02</span>
+        <span class="card-lang">繁體中文</span>
+        <span class="card-region">Hong Kong</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="./uk.html" class="card">
+        <span class="card-num">03</span>
         <span class="card-lang">English</span>
         <span class="card-region">United Kingdom</span>
         <span class="card-arrow">→</span>
       </a>
 
       <a href="./my.html" class="card">
-        <span class="card-num">03</span>
+        <span class="card-num">04</span>
         <span class="card-lang">Bahasa Melayu</span>
         <span class="card-region">Malaysia</span>
-        <span class="card-arrow">→</span>
-      </a>
-
-      <a href="./hk.html" class="card">
-        <span class="card-num">04</span>
-        <span class="card-lang">繁體中文</span>
-        <span class="card-region">Hong Kong</span>
         <span class="card-arrow">→</span>
       </a>
 
@@ -405,8 +441,8 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-l">© 2026 Total OPC Sdn. Bhd.</div>
-    <div class="footer-r">All rights reserved.</div>
+    <div class="footer-l">© 2026 TOTAL OPC SDN. BHD. (全方位一人有限公司)</div>
+    <div class="footer-r">SSM: 202601023366 (1685463-A) · Malaysia · All Rights Reserved</div>
   </footer>
 
 </body>
