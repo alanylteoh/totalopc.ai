@@ -87,17 +87,11 @@
     .mobile-menu a.active{color:var(--gold)}
 
     @media(max-width:1024px){.nav{height:76px}.nav-link{display:none}.hamburger{display:block}.lang-switcher{display:none}.nav-cta{display:none}}
-    @media(max-width:640px){.nav{height:72px}.nav-in{padding:0 16px}.nav-brand-en{font-size:15px}.nav-brand-cn{font-size:9px}.nav-logo img{height:28px;width:28px;object-fit:contain}}
-
-
+    @media(max-width:640px){.nav{height:72px}.nav-in{padding:0 16px}.nav-logo{display:flex;align-items:center;gap:8px}.nav-logo img{height:28px;width:28px;object-fit:contain;flex-shrink:0}.nav-brand{min-width:0;overflow:hidden;flex:1;margin-left:8px}.nav-brand-en{font-size:13px;letter-spacing:.5px;max-width:160px;overflow:hidden;text-overflow:ellipsis}.nav-brand-cn{display:block;font-size:10px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--g400);margin-top:1px}}
 
     /* ── MOBILE NAV FIX ── */
-    @media(max-width:640px){.nav-logo{display:flex;width:28px;height:28px;flex-shrink:0}.nav-brand{min-width:0;overflow:hidden;flex:1;margin-left:8px}.nav-brand-cn{display:block;font-size:9px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--g400);margin-top:1px}.nav-brand-en{font-size:14px;letter-spacing:.5px}.nav-brand-en::after{content:'';display:none}}
+    
     .nav-brand-en{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}
-    @media(max-width:640px){.nav-brand-en{max-width:160px;font-size:13px}}
-    /* ── SERVICES TITLE FIX ── */
-    .svc-header .sec-title{word-break:keep-all;overflow-wrap:normal}
-    @media(max-width:640px){.svc-header .sec-title em{display:block;margin-top:2px}}
 
     /* ── MOBILE LANG SWITCHER ── */
     .mobile-lang{display:none;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15);width:80%;max-width:360px}
@@ -211,21 +205,21 @@
           <div class="lang-dropdown">
             <a href="index.html">语言选择</a>
 
-            <a href="business.html">简体中文</a>
+            <a href="business.html"><span class="lang-code">CN</span> 简体中文</a>
 
-            <a href="business_hk.html">繁體中文</a>
+            <a href="business_hk.html"><span class="lang-code">HK</span> 繁體中文</a>
 
-            <a href="business_uk.html">English</a>
+            <a href="business_uk.html"><span class="lang-code">ENG</span> English</a>
 
-            <a href="business_my.html">Bahasa Melayu</a>
+            <a href="business_my.html"><span class="lang-code">MY</span> Bahasa Melayu</a>
 
-            <a href="business_th.html" class="current">ภาษาไทย</a>
+            <a href="business_th.html" class="current"><span class="lang-code">TH</span> ภาษาไทย</a>
 
-            <a href="business_id.html">Bahasa Indonesia</a>
+            <a href="business_id.html"><span class="lang-code">ID</span> Bahasa Indonesia</a>
 
-            <a href="business_jp.html">日本語</a>
+            <a href="business_jp.html"><span class="lang-code">JP</span> 日本語</a>
 
-            <a href="business_kr.html">한국어</a></div>
+            <a href="business_kr.html"><span class="lang-code">KR</span> 한국어</a></div>
         </div>
       </div>
     </div>
@@ -361,7 +355,8 @@
       <div class="footer-l">
         <strong>TOTAL OPC SDN. BHD.</strong>
         全方位一人有限公司<br>
-        <span class="footer-cn">SSM: 202601023366 (1685463-A)</span>
+        <span class="footer-cn">SSM: 202601023366 (1685463-A)</span><br>
+        <span class="footer-cn">Email: <a href="mailto:mail@totalopc.ai" style="color:rgba(201,160,74,.6)">mail@totalopc.ai</a></span>
       </div>
       <div class="footer-r">
         <a href="th.html">หน้าแรก</a> &nbsp;·&nbsp;
@@ -412,7 +407,21 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="th.html">หน้าแรก</a>
     <a href="business_th.html" class="active">ธุรกิจ</a>
-  </div>
+  
+    <div class="mobile-lang">
+      <div class="mobile-lang-title">选择语言</div>
+      <div class="mobile-lang-grid">
+        <a href="business.html"><span class="ml-code">CN</span><span class="ml-name">简体中文</span></a>
+        <a href="business_hk.html"><span class="ml-code">HK</span><span class="ml-name">繁體中文</span></a>
+        <a href="business_uk.html"><span class="ml-code">ENG</span><span class="ml-name">English</span></a>
+        <a href="business_my.html"><span class="ml-code">MY</span><span class="ml-name">Bahasa</span></a>
+        <a href="business_th.html" class="active"><span class="ml-code">TH</span><span class="ml-name">ภาษาไทย</span></a>
+        <a href="business_id.html"><span class="ml-code">ID</span><span class="ml-name">Indonesia</span></a>
+        <a href="business_jp.html"><span class="ml-code">JP</span><span class="ml-name">日本語</span></a>
+        <a href="business_kr.html"><span class="ml-code">KR</span><span class="ml-name">한국어</span></a>
+      </div>
+    </div>
+</div>
 
 </body>
 </html>
