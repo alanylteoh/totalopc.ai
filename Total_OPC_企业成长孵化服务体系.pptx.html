@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Total OPC - 企业成长孵化服务体系</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#1a1a2e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color:#fff; overflow:hidden; height:100vh; }
+.ppt-container { width:100vw; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.slide-wrapper { width:90vw; max-width:1200px; aspect-ratio:16/9; position:relative; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+.slide { position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition:opacity 0.4s ease; pointer-events:none; }
+.slide.active { opacity:1; pointer-events:auto; }
+.slide img { width:100%; height:100%; object-fit:contain; }
+.controls { display:flex; align-items:center; gap:20px; margin-top:20px; }
+.btn { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff; padding:10px 20px; border-radius:6px; cursor:pointer; font-size:14px; transition:all 0.2s; }
+.btn:hover { background:rgba(255,255,255,0.2); }
+.page-info { font-size:14px; color:rgba(255,255,255,0.7); min-width:80px; text-align:center; }
+.title-bar { font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:12px; letter-spacing:2px; }
+</style>
+</head>
+<body>
+<div class="ppt-container">
+  <div class="title-bar">TOTAL OPC SDN. BHD. — 企业成长孵化服务体系</div>
+  <div class="slide-wrapper">
+    <div class="slide" data-index="0"><img src="https://s.coze.cn/t/4NGSXPOQOPI/" alt="封面" /></div>
+    <div class="slide" data-index="1"><img src="https://s.coze.cn/t/nRnU5omjUXU/" alt="公司定位" /></div>
+    <div class="slide" data-index="2"><img src="https://s.coze.cn/t/1Op5Zxn6aCQ/" alt="四阶段总览" /></div>
+    <div class="slide" data-index="3"><img src="https://s.coze.cn/t/Sk02E1X8WxI/" alt="阶段一" /></div>
+    <div class="slide" data-index="4"><img src="https://s.coze.cn/t/xzZ_MCJAi60/" alt="阶段二" /></div>
+    <div class="slide" data-index="5"><img src="https://s.coze.cn/t/pTXN0GM_m5k/" alt="阶段三" /></div>
+    <div class="slide" data-index="6"><img src="https://s.coze.cn/t/xpD27niT6e4/" alt="阶段四" /></div>
+    <div class="slide" data-index="7"><img src="https://s.coze.cn/t/KVwCd0evsEc/" alt="核心优势" /></div>
+    <div class="slide" data-index="8"><img src="https://s.coze.cn/t/DKOmFbIL5lo/" alt="结尾" /></div>
+  </div>
+  <div class="controls">
+    <button class="btn" onclick="prevSlide()">◀ 上一页</button>
+    <span class="page-info" id="pageInfo">1 / 9</span>
+    <button class="btn" onclick="nextSlide()">下一页 ▶</button>
+  </div>
+</div>
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+function showSlide(n) {
+  current = (n + total) % total;
+  slides.forEach((s,i) => s.classList.toggle('active', i === current));
+  document.getElementById('pageInfo').textContent = (current+1) + ' / ' + total;
+}
+function prevSlide() { showSlide(current - 1); }
+function nextSlide() { showSlide(current + 1); }
+document.addEventListener('keydown', e => {
+  if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevSlide();
+  if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') nextSlide();
+});
+showSlide(0);
+</script>
+</body>
+</html>
